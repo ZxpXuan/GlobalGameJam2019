@@ -106,9 +106,9 @@ TextureImporter:
       name: LightingBolt_0
       rect:
         serializedVersion: 2
-        x: 122
+        x: 43
         y: 578
-        width: 198
+        width: 277
         height: 665
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -117,7 +117,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d76993d2995dfc45b9a790b45f56877
+      spriteID: d40b7862ca47d5b4eba08fa114f0815d
       vertices: []
       indices: 
       edges: []
@@ -137,7 +137,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a034735cdf50f94da5a89d5464f9081
+      spriteID: 7909fd2a96a1a7349a79fcda614144f4
       vertices: []
       indices: 
       edges: []
@@ -157,7 +157,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7838fdb53b71816409eee9af2648a8e6
+      spriteID: 294585113dac865468d536bfcdf595d4
       vertices: []
       indices: 
       edges: []
@@ -166,10 +166,10 @@ TextureImporter:
       name: LightingBolt_3
       rect:
         serializedVersion: 2
-        x: 916
+        x: 827
         y: 588
-        width: 312
-        height: 618
+        width: 429
+        height: 677
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,7 +177,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7fa2607f086a3a4ca58e16740769e86
+      spriteID: 7021b2d2d4163754d90b4a6c09ea3c78
       vertices: []
       indices: 
       edges: []
@@ -186,9 +186,9 @@ TextureImporter:
       name: LightingBolt_4
       rect:
         serializedVersion: 2
-        x: 130
+        x: 47
         y: 57
-        width: 259
+        width: 342
         height: 471
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -197,7 +197,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2b72f26bacb0f243b9af9d60e7b732a
+      spriteID: b97d5d834d462c0489f0fbd724f588d9
       vertices: []
       indices: 
       edges: []
@@ -217,7 +217,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac1252c42acf296418ab2fbf152db938
+      spriteID: 7f605ba2e4a36da4ab926dfa664d6982
       vertices: []
       indices: 
       edges: []
@@ -237,7 +237,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35f0d37690823ff49bf0bfbf19cb725d
+      spriteID: f75243ab7dc19c345b062c66c9851f80
       vertices: []
       indices: 
       edges: []
@@ -246,10 +246,10 @@ TextureImporter:
       name: LightingBolt_7
       rect:
         serializedVersion: 2
-        x: 882
+        x: 815
         y: 36
-        width: 315
-        height: 475
+        width: 443
+        height: 486
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,7 +257,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd5fbe1485e1cec4989733f90dc405db
+      spriteID: 4087c20927c9e4c47843eb2618a15571
       vertices: []
       indices: 
       edges: []
