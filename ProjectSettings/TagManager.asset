@@ -44,6 +44,9 @@ TagManager:
   - name: Background
     uniqueID: 1865239195
     locked: 0
+  - name: Ground
+    uniqueID: 3076337287
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -55,4 +58,7 @@ TagManager:
     locked: 0
   - name: FrontRoller
     uniqueID: 2289337563
+    locked: 0
+  - name: FrontMost
+    uniqueID: 2919695529
     locked: 0

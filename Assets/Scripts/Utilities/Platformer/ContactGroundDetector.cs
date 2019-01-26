@@ -4,15 +4,15 @@ using UnityEngine;
 
 namespace JTUtility.Platformer
 {
-	[RequireComponent(typeof(Collider2D))]
 	public class ContactGroundDetector : BaseGroundDetector
 	{
-		protected new Collider2D collider;
+		[SerializeField] protected new Collider2D collider;
 		protected ContactPoint2D[] contactPoints = new ContactPoint2D[20];
 
 		protected virtual void Awake()
 		{
-			collider = GetComponent<Collider2D>();
+			if (collider == null)
+				collider = GetComponent<Collider2D>();
 		}
 
 		protected override bool IsOnGround()

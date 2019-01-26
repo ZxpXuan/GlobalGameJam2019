@@ -15,7 +15,7 @@ public class OneDirectionCamera : MonoBehaviour
 		camera = GetComponent<Camera>();
 	}
 
-	private void Update()
+	private void FixedUpdate()
 	{
 		Follow();
 		MoveBarrier();

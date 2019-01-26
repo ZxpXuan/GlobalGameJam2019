@@ -49,15 +49,6 @@ public class CharacterMover : PhysicalMover, IInputModelPlugable
 	{
 		desiredVelocity.x = vector.x;
 		desiredVelocity.y += vector.y;
-
-		if (vector.x > 0)
-		{
-			this.transform.localScale = Vector3.one;
-		}
-		else if (vector.x < 0)
-		{
-			this.transform.localScale = new Vector3(-1, 1, 1);
-		}
 	}
 
 	protected override void FixedUpdate()

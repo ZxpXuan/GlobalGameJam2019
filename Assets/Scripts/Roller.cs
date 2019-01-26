@@ -6,6 +6,7 @@ public class Roller : MonoBehaviour
 {
 	[SerializeField] float maxSpeed;
 	[SerializeField] ParticleSystem particle;
+	[SerializeField] ParticleSystemRenderer pRender;
 
 	new Rigidbody2D rigidbody;
 	new Collider2D collider;
@@ -19,6 +20,7 @@ public class Roller : MonoBehaviour
 		var renderer = GetComponent<SpriteRenderer>();
 		renderer.color = color;
 		renderer.sortingLayerName = layerName;
+		pRender.sortingLayerName = layerName;
 	}
 
 	public void SetSpeed(float force)
@@ -42,8 +44,6 @@ public class Roller : MonoBehaviour
 			particle.transform.position = transform.position;
 			return;
 		}
-
-		print("Collide");
 
 		foreach (var contact in contacts)
 		{

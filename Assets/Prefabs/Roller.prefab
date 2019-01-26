@@ -95,8 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 244385fa69fe1a14790fb77aefd82e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 100
+  maxSpeed: 75
   particle: {fileID: 8639765867244346741}
+  pRender: {fileID: 8639765867245850287}
 --- !u!50 &8639765865845439798
 Rigidbody2D:
   serializedVersion: 4
@@ -294,7 +295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19885000, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: EmissionModule.rateOverDistance.scalar
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 19885000, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -316,6 +317,14 @@ PrefabInstance:
       propertyPath: InitialModule.maxNumParticles
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 19885000, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19885000, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: -0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
 --- !u!4 &8639765867226037745 stripped
@@ -327,6 +336,12 @@ Transform:
 --- !u!198 &8639765867244346741 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 19885000, guid: d7bf18dd20422304ea868e95c3518f19,
+    type: 3}
+  m_PrefabInstance: {fileID: 8639765867225921213}
+  m_PrefabAsset: {fileID: 0}
+--- !u!199 &8639765867245850287 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 19953682, guid: d7bf18dd20422304ea868e95c3518f19,
     type: 3}
   m_PrefabInstance: {fileID: 8639765867225921213}
   m_PrefabAsset: {fileID: 0}
