@@ -7,10 +7,10 @@ public class RollerSpawner : MonoBehaviour
 {
 	[SerializeField, MinMaxSlider(0, 3)] Vector2 spawnDelay;
 	[SerializeField, MinMaxSlider(0, 1)] Vector2 colorRange;
-	[SerializeField, MinMaxSlider(0, 2)] Vector2 sizeRange;
+	[SerializeField, MinMaxSlider(0, 20)] Vector2 speedRange;
 	[SerializeField] GameObject rollerPrefab;
-	[SerializeField] int frontLayerID;
-	[SerializeField] int backLayerID;
+	[SerializeField] string frontLayerName;
+	[SerializeField] string backLayerName;
 
 	float time;
 	List<GameObject> rollers;
@@ -18,7 +18,6 @@ public class RollerSpawner : MonoBehaviour
 	private void Awake()
 	{
 		rollers = new List<GameObject>();
-
 	}
 	
 	void Update()
@@ -34,17 +33,27 @@ public class RollerSpawner : MonoBehaviour
 	void Spawn()
 	{
 		var instance = Instantiate(rollerPrefab);
+		rollers.Add(instance);
 		instance.transform.position = transform.position;
 
 		var roller = instance.GetComponentInChildren<Roller>();
 		var color = Color.white * colorRange.RandomBetween();
 		color.a = 1;
 
-		if (color.r > 0.5f)
-			roller.SetColorAndSortLayer(color, frontLayerID);
+		if (color.r > (colorRange.x + colorRange.y)/2)
+			roller.SetColorAndSortLayer(color, frontLayerName);
 		else
-			roller.SetColorAndSortLayer(color, backLayerID);
+			roller.SetColorAndSortLayer(color, backLayerName);
 
-		roller.transform.localScale = Vector3.one * sizeRange.RandomBetween();
+		roller.SetSpeed(speedRange.RandomBetween());
+	}
+
+	public void DestroyAllRoller()
+	{
+		for (int i = 0; i < rollers.Count; i++)
+		{
+			if (rollers[i] != null)
+				Destroy(rollers[i]);
+		}
 	}
 }

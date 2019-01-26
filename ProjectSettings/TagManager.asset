@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Roller
+  - Climber
+  - Builder
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - Roller
   - Climber
   - PlayerOnly
-  - 
+  - Builder
   - 
   - 
   - 

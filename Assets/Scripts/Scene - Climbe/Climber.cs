@@ -5,24 +5,24 @@ using JTUtility;
 
 public class Climber : MonoBehaviour
 {
-	[SerializeField] Transform target;
-	[SerializeField, Range(0f, 1f)] float pushPlayerChance;
-	[SerializeField, MinMaxSlider(0, 5)] Vector2 climbingForce;
-	[SerializeField, MinMaxSlider(0, 5)] Vector2 chargeDelay;
+	[SerializeField] protected Transform target;
+	[SerializeField, Range(0f, 1f)] protected float pushPlayerChance;
+	[SerializeField, MinMaxSlider(0, 5)] protected Vector2 climbingForce;
+	[SerializeField, MinMaxSlider(0, 5)] protected Vector2 chargeDelay;
 
-	new Rigidbody2D rigidbody;
+	new protected Rigidbody2D rigidbody;
 
-	float delay = 0;
-	bool charged;
+	protected float delay = 0;
+	protected bool charged;
 
-	private void Awake()
+	protected virtual void Awake()
 	{
 		charged = Random.value > 0.5f;
 		delay = chargeDelay.RandomBetween();
 		rigidbody = GetComponent<Rigidbody2D>();
 	}
 
-	private void Update()
+	protected virtual void Update()
 	{
 		delay -= Time.deltaTime;
 		if (delay > 0) return;
@@ -40,7 +40,7 @@ public class Climber : MonoBehaviour
 		delay = chargeDelay.RandomBetween();
 	}
 
-	void Charge()
+	protected virtual void Charge()
 	{
 		var toTarget = (target.position + Vector3.up * 3) - transform.position;
 		toTarget.Normalize();
@@ -48,7 +48,7 @@ public class Climber : MonoBehaviour
 		rigidbody.AddForce(climbingForce.RandomBetween() * 1000 * toTarget, ForceMode2D.Impulse);
 	}
 
-	void StepBack()
+	protected virtual void StepBack()
 	{
 		var toTarget = target.position - transform.position;
 		toTarget.Normalize();
@@ -56,7 +56,7 @@ public class Climber : MonoBehaviour
 		rigidbody.AddForce(climbingForce.RandomBetween() * 800 * -toTarget, ForceMode2D.Impulse);
 	}
 
-	private void OnCollisionEnter2D(Collision2D collision)
+	protected virtual void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.collider.tag != "Player")
 			return;

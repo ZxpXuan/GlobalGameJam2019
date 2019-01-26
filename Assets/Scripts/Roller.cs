@@ -14,16 +14,16 @@ public class Roller : MonoBehaviour
 
 	ContactPoint2D[] contacts = new ContactPoint2D[3];
 
-	public void SetColorAndSortLayer(Color color, int layerID)
+	public void SetColorAndSortLayer(Color color, string layerName)
 	{
 		var renderer = GetComponent<SpriteRenderer>();
 		renderer.color = color;
-		renderer.sortingLayerID = layerID;
+		renderer.sortingLayerName = layerName;
 	}
 
 	public void SetSpeed(float force)
 	{
-
+		GetComponent<ConstantForce2D>().force = Vector3.right * force;
 	}
 
 	private void Awake()
