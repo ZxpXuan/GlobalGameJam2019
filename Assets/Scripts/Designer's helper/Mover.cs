@@ -191,7 +191,7 @@ public class Mover : MonoBehaviour
 		running = true;
 	}
 
-	private void Update()
+	private void FixedUpdate()
 	{
 		transform.position = GetNextPosition();
 	}

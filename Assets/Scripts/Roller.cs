@@ -36,6 +36,7 @@ public class Roller : MonoBehaviour
 
 	private void Update()
 	{
+		if (collider == null) return;
 		var emission = particle.emission;
 		if (Physics2D.GetContacts(collider, contacts) <= 0)
 		{

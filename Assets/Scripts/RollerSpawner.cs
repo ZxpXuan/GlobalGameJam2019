@@ -56,4 +56,13 @@ public class RollerSpawner : MonoBehaviour
 				Destroy(rollers[i]);
 		}
 	}
+
+	public void DestroyAllRollerBefore(float x)
+	{
+		for (int i = 0; i < rollers.Count; i++)
+		{
+			if (rollers[i] != null && rollers[i].GetComponentInChildren<Roller>().transform.position.x < x)
+				Destroy(rollers[i]);
+		}
+	}
 }

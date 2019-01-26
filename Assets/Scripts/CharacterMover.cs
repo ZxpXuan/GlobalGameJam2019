@@ -10,6 +10,8 @@ public class CharacterMover : PhysicalMover, IInputModelPlugable
 	[SerializeField] int id;
 	[SerializeField] float jumpHeight;
 
+	public bool UseRigidbody { get; set; } = true;
+
 	Vector2 desiredVelocity;
 
 	IInputModel inputModel;
@@ -54,9 +56,20 @@ public class CharacterMover : PhysicalMover, IInputModelPlugable
 	protected override void FixedUpdate()
 	{
 		base.FixedUpdate();
-		rigidBody.MovePosition(transform.position + (Vector3)desiredVelocity * Time.deltaTime);
-		desiredVelocity += Physics2D.gravity * Time.deltaTime * rigidBody.gravityScale;
-		rigidBody.velocity = Vector3.Lerp(rigidBody.velocity, desiredVelocity, Time.deltaTime * 1);
+
+		if (UseRigidbody)
+		{
+			rigidBody.MovePosition(transform.position + (Vector3)desiredVelocity * Time.deltaTime);
+			desiredVelocity += Physics2D.gravity * Time.deltaTime * rigidBody.gravityScale;
+		}
+		else
+		{
+			rigidBody.velocity = Vector2.zero;
+			transform.position += (Vector3)desiredVelocity * Time.deltaTime;
+			desiredVelocity += Physics2D.gravity * Time.deltaTime * (rigidBody.gravityScale);
+		}
+
+		//rigidBody.velocity = Vector3.Lerp(rigidBody.velocity, desiredVelocity, Time.deltaTime * 1);
 	}
 
 	public void SetInputModel(IInputModel model)
