@@ -15137,7 +15137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDelay: {x: 0.7, y: 2}
-  colorRange: {x: 0.6, y: 0.8}
+  colorRange: {x: 0.6, y: 1}
   speedRange: {x: 9.5, y: 12}
   rollerPrefab: {fileID: 4936033352429562615, guid: 67f70530b22418e41b62c4d7788bfa62,
     type: 3}
@@ -17549,7 +17549,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 24913a1fc5bf8854a8752595be13bd38, type: 2}
   m_InitialState: 0
-  m_WrapMode: 0
+  m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -32326,12 +32326,12 @@ PrefabInstance:
     - target: {fileID: 2221766918307811628, guid: a0abd0a80c08efc4cb8d5ab491000d9e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 262.95
+      value: -68.8
       objectReference: {fileID: 0}
     - target: {fileID: 2221766918307811628, guid: a0abd0a80c08efc4cb8d5ab491000d9e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -91.41
+      value: 6.6
       objectReference: {fileID: 0}
     - target: {fileID: 2221766918307811628, guid: a0abd0a80c08efc4cb8d5ab491000d9e,
         type: 3}
@@ -32407,6 +32407,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567637467600939205, guid: a0abd0a80c08efc4cb8d5ab491000d9e,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1096475173
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567637467600939205, guid: a0abd0a80c08efc4cb8d5ab491000d9e,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1010408695685712569, guid: a0abd0a80c08efc4cb8d5ab491000d9e,
         type: 3}
