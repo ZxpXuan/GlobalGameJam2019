@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2261382749504530328}
   - component: {fileID: 2686633957334736050}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 5244228524659257302}
   - component: {fileID: 5244228524659257298}
   - component: {fileID: 9164651664937033766}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Climber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  pushPlayerChance: 0.75
+  pushPlayerChance: 1
   climbingForce: {x: 0.4435683, y: 2.1550035}
   chargeDelay: {x: 0, y: 1.6978805}
 --- !u!61 &9164651664937033766

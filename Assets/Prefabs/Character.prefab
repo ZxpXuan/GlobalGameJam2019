@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2221766918307811628}
   - component: {fileID: 2221766918307811630}
   - component: {fileID: 2221766918307811632}
-  - component: {fileID: 8638260034152271004}
+  - component: {fileID: 7941564879335163673}
   - component: {fileID: 8537482685983422511}
   - component: {fileID: 4781445258062079080}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &8638260034152271004
+--- !u!114 &7941564879335163673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,14 +92,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2221766918307811629}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45ac4c38f285310478ccd96a7ebfd2ba, type: 3}
+  m_Script: {fileID: 11500000, guid: e53c667a06ac21941b49b761ed608855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   updateType: 1
-  fallingDetectStartDistance: 0.5
-  fallingRaycastXOffset: 0.62
-  fallingRaycastYOffset: -0.7
-  fallingRaycastDepth: 0.2
 --- !u!114 &8537482685983422511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3008497027362687209}
   - component: {fileID: 8567637467600939205}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

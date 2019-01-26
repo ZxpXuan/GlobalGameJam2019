@@ -13,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Ground
+  - Roller
+  - Climber
+  - PlayerOnly
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BackRoller
+    uniqueID: 55068461
+    locked: 0
+  - name: Player
+    uniqueID: 3198492123
+    locked: 0
+  - name: FrontRoller
+    uniqueID: 2289337563
     locked: 0

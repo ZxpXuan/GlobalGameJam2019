@@ -65,7 +65,7 @@ public class CharacterMover : PhysicalMover, IInputModelPlugable
 		base.FixedUpdate();
 		rigidBody.MovePosition(transform.position + (Vector3)desiredVelocity * Time.deltaTime);
 		desiredVelocity += Physics2D.gravity * Time.deltaTime * rigidBody.gravityScale;
-		rigidBody.velocity = Vector3.Lerp(rigidBody.velocity, desiredVelocity, Time.deltaTime * 8);
+		rigidBody.velocity = Vector3.Lerp(rigidBody.velocity, desiredVelocity, Time.deltaTime * 1);
 	}
 
 	public void SetInputModel(IInputModel model)

@@ -42,7 +42,7 @@ public class Climber : MonoBehaviour
 
 	void Charge()
 	{
-		var toTarget = target.position - transform.position;
+		var toTarget = (target.position + Vector3.up * 3) - transform.position;
 		toTarget.Normalize();
 
 		rigidbody.AddForce(climbingForce.RandomBetween() * 1000 * toTarget, ForceMode2D.Impulse);
@@ -53,7 +53,7 @@ public class Climber : MonoBehaviour
 		var toTarget = target.position - transform.position;
 		toTarget.Normalize();
 
-		rigidbody.AddForce(climbingForce.RandomBetween() * 1000 * -toTarget, ForceMode2D.Impulse);
+		rigidbody.AddForce(climbingForce.RandomBetween() * 800 * -toTarget, ForceMode2D.Impulse);
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
@@ -71,8 +71,8 @@ public class Climber : MonoBehaviour
 		var toTarget = target.position - transform.position;
 		toTarget.Normalize();
 
-		if (Vector3.Dot(toPlayer, toTarget) > 0.5f) return;
+		if (Vector3.Dot(toPlayer, toTarget) > 0.7f) return;
 
-		rigidbody.AddForce(climbingForce.RandomBetween() * 500 * toPlayer, ForceMode2D.Impulse);
+		rigidbody.AddForce(climbingForce.RandomBetween() * 700 * toPlayer, ForceMode2D.Impulse);
 	}
 }
