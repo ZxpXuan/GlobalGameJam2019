@@ -75,7 +75,6 @@ public class CharacterMover : PhysicalMover, IInputModelPlugable
 		}
 
 		desiredVelocity += Physics2D.gravity * Time.deltaTime * rigidBody.gravityScale;
-		print(desiredVelocity);
 		if (desiredVelocity.y < -FallingSpeedLimit)
 			desiredVelocity.y = -FallingSpeedLimit;
 

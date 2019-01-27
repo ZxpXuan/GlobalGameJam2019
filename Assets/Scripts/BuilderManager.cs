@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BuilderManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class BuilderManager : MonoBehaviour
 
 	[SerializeField] bool build;
 	[SerializeField] int workingBuilder;
+
+	[SerializeField] UnityEvent OnFinished;
 
 	bool building;
 
@@ -33,9 +36,14 @@ public class BuilderManager : MonoBehaviour
 			positions.Add(builders[i].transform.position);
 			builders[i].Initialize();
 			builders[i].transform.rotation = Quaternion.identity;
-			builders[i].transform.position += new Vector3(Random.Range(-5, 5), Random.Range(0, 2), 0);
+			builders[i].transform.position += new Vector3(Random.Range(-10, 10), Random.Range(0, 5), 0);
 			builders[i].OnFinished += BuilderManager_OnFinished;
 		}
+	}
+
+	public void StartBuilding()
+	{
+		build = true;
 	}
 
 	private void BuilderManager_OnFinished()
@@ -43,6 +51,9 @@ public class BuilderManager : MonoBehaviour
 		print("Finished");
 		print(workingBuilder);
 		workingBuilder--;
+
+		if (workingBuilder <= 1)
+			OnFinished.Invoke();
 	}
 
 	private void Update()
@@ -61,6 +72,7 @@ public class BuilderManager : MonoBehaviour
 
 		for (int i = 0; i < builders.Count; i ++)
 		{
+			if (!builders[i].Ready) return;
 			if (builders[i].Working || builders[i].Finished) continue;
 
 			workingBuilder++;

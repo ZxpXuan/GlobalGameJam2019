@@ -14,13 +14,13 @@ public class Builder : Climber
 
 	public event Action OnFinished;
 
+	public bool Ready { get; set; }
 	public bool Working { get; set; }
 	public bool Finished { get; set; }
 
 	public void BeginBuilding(Vector3 position)
 	{
-		this.gameObject.layer = LayerMask.NameToLayer("Builder");
-		GetComponentInChildren<SpriteRenderer>().color = buildColor;
+		this.gameObject.layer = LayerMask.NameToLayer("Roller");
 		buildTargetPosition = position;
 		building = true;
 		Working = true;
@@ -38,6 +38,11 @@ public class Builder : Climber
 
 	protected override void Update()
 	{
+		if (Ready)
+		{
+			GetComponentInChildren<SpriteRenderer>().color = buildColor;
+		}
+
 		if (building)
 		{
 			Build();
@@ -59,7 +64,7 @@ public class Builder : Climber
 			if (toTarget.sqrMagnitude < Time.deltaTime * Time.deltaTime * 100)
 			{
 				transform.position = buildTargetPosition;
-				this.gameObject.layer = LayerMask.NameToLayer("Climber");
+				this.gameObject.layer = LayerMask.NameToLayer("Roller");
 				rigidbody.simulated = true;
 				rigidbody.isKinematic = true;
 				rigidbody.velocity = Vector3.zero;
@@ -68,8 +73,8 @@ public class Builder : Climber
 			}
 			else
 			{
-				transform.position = Vector3.MoveTowards(transform.position, buildTargetPosition, Time.deltaTime * 10);
-				transform.rotation = Quaternion.RotateTowards(transform.rotation, origRotation, Time.deltaTime);
+				transform.position = Vector3.MoveTowards(transform.position, buildTargetPosition, Time.deltaTime * 5);
+				transform.rotation = origRotation;
 			}
 		}
 		else
