@@ -13,6 +13,12 @@ public class CharacterMover : PhysicalMover, IInputModelPlugable
 
 	public bool UseRigidbody { get; set; } = true;
 
+	public float MoveSpeed
+	{
+		get => moveSpeed;
+		set => moveSpeed = value;
+	}
+
 	public float FallingSpeedLimit
 	{
 		get => fallingSpeedLimit;
