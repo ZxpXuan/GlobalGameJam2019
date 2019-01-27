@@ -16,6 +16,9 @@ public class Spike : MonoBehaviour
 			StartCoroutine(PlayerKilled(collision.gameObject));
 			return;
 		}
+
+		if (collision.tag == "Builder")
+			return;
 		
 		Destroy(collision);
 	}
