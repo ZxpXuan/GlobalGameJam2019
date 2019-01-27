@@ -16,7 +16,7 @@ public class Spike : MonoBehaviour
 			StartCoroutine(PlayerKilled(collision.gameObject));
 			return;
 		}
-
+		
 		Destroy(collision);
 	}
 
