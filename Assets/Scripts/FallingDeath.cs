@@ -56,8 +56,6 @@ public class FallingDeath : MonoBehaviour
 		c.a = 1;
 		blackOut.color = c;
 
-		player.transform.position = respawnPoint.position;
-		Camera.main.GetComponent<OneDirectionCamera>().ResetPosition();
 
 		time = delayTime;
 		while (time > 0)
@@ -66,6 +64,9 @@ public class FallingDeath : MonoBehaviour
 
 			yield return null;
 		}
+
+		player.transform.position = respawnPoint.position;
+		Camera.main.GetComponent<OneDirectionCamera>().ResetPosition();
 
 		time = fadeoutTime;
 		while (time > 0)
