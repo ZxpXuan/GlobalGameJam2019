@@ -11,7 +11,7 @@ public class GradiantlyDisplayObject : MonoBehaviour
 	[SerializeField] float currentRange;
 	[SerializeField] float fadeInDuration = 2;
 
-	private void Start()
+	private void Awake()
 	{
 		objects.Sort((b1, b2) =>
 		{
@@ -34,6 +34,8 @@ public class GradiantlyDisplayObject : MonoBehaviour
 				renderers[j].color = colors[j];
 			}
 		}
+
+		this.enabled = false;
 	}
 
 	private void Update()

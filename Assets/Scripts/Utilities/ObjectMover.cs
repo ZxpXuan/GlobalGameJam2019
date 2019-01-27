@@ -299,7 +299,7 @@ namespace JTUtility
 			if ((sqrMag <= minDistance.Square() || sqrMag < float.Epsilon) && Mathf.Abs(angle) < float.Epsilon)
 			{
 				// Stop all movement
-				transform.SetParent(target);
+				//transform.SetParent(target);
 				target = null;
 				transform.localPosition = TransformOffset;
 				transform.localRotation = Quaternion.identity;
@@ -359,7 +359,7 @@ namespace JTUtility
 				angleSqrMag <= minDistance.Square())
 			{
 				// Stop all movement
-				transform.SetParent(target);
+				//transform.SetParent(target);
 				target = null;
 				transform.localPosition = TransformOffset;
 				transform.localRotation = Quaternion.identity;

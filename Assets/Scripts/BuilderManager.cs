@@ -18,6 +18,8 @@ public class BuilderManager : MonoBehaviour
 
 	bool building;
 
+	int builderCount;
+
 
 	private void Awake()
 	{
@@ -39,6 +41,8 @@ public class BuilderManager : MonoBehaviour
 			builders[i].transform.position += new Vector3(Random.Range(-10, 10), Random.Range(0, 5), 0);
 			builders[i].OnFinished += BuilderManager_OnFinished;
 		}
+
+		builderCount = builders.Count;
 	}
 
 	public void StartBuilding()
@@ -51,8 +55,9 @@ public class BuilderManager : MonoBehaviour
 		print("Finished");
 		print(workingBuilder);
 		workingBuilder--;
+		builderCount--;
 
-		if (workingBuilder <= 1)
+		if (builderCount <= 1)
 			OnFinished.Invoke();
 	}
 
