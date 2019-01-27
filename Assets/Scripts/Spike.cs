@@ -37,9 +37,9 @@ public class Spike : MonoBehaviour
 			yield return null;
 		}
 
-		Camera.main.GetComponent<OneDirectionCamera>().ResetPosition();
 		player.transform.position = respawnPoint.position;
-		time = fadeoutTime;
+        Camera.main.GetComponent<OneDirectionCamera>().ResetPosition();
+        time = fadeoutTime;
 		while (time > 0)
 		{
 			time -= Time.deltaTime;
