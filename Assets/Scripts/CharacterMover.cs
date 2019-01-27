@@ -9,8 +9,15 @@ public class CharacterMover : PhysicalMover, IInputModelPlugable
 {
 	[SerializeField] int id;
 	[SerializeField] float jumpHeight;
+	[SerializeField] float fallingSpeedLimit = 10;
 
 	public bool UseRigidbody { get; set; } = true;
+
+	public float FallingSpeedLimit
+	{
+		get => fallingSpeedLimit;
+		set => fallingSpeedLimit = value;
+	}
 
 	Vector2 desiredVelocity;
 
@@ -60,14 +67,17 @@ public class CharacterMover : PhysicalMover, IInputModelPlugable
 		if (UseRigidbody)
 		{
 			rigidBody.MovePosition(transform.position + (Vector3)desiredVelocity * Time.deltaTime);
-			desiredVelocity += Physics2D.gravity * Time.deltaTime * rigidBody.gravityScale;
 		}
 		else
 		{
 			rigidBody.velocity = Vector2.zero;
 			transform.position += (Vector3)desiredVelocity * Time.deltaTime;
-			desiredVelocity += Physics2D.gravity * Time.deltaTime * (rigidBody.gravityScale);
 		}
+
+		desiredVelocity += Physics2D.gravity * Time.deltaTime * rigidBody.gravityScale;
+		print(desiredVelocity);
+		if (desiredVelocity.y < -FallingSpeedLimit)
+			desiredVelocity.y = -FallingSpeedLimit;
 
 		//rigidBody.velocity = Vector3.Lerp(rigidBody.velocity, desiredVelocity, Time.deltaTime * 1);
 	}
