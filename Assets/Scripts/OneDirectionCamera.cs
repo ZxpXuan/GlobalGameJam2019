@@ -17,6 +17,8 @@ public class OneDirectionCamera : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		if (target == null)
+			return;
 		Follow();
 		MoveBarrier();
 	}
