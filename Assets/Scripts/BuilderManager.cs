@@ -14,11 +14,13 @@ public class BuilderManager : MonoBehaviour
 	[SerializeField] bool build;
 	[SerializeField] int workingBuilder;
 
-	[SerializeField] UnityEvent OnFinished;
+    [SerializeField] UnityEvent OnAllReady;
+    [SerializeField] UnityEvent OnFinished;
 
 	bool building;
 
 	int builderCount;
+    int readyCount;
 
 
 	private void Awake()
@@ -39,7 +41,8 @@ public class BuilderManager : MonoBehaviour
 			builders[i].Initialize();
 			builders[i].transform.rotation = Quaternion.identity;
 			builders[i].transform.position += new Vector3(Random.Range(-10, 10), Random.Range(0, 5), 0);
-			builders[i].OnFinished += BuilderManager_OnFinished;
+            builders[i].OnReady += BuilderManager_OnReady;
+            builders[i].OnFinished += BuilderManager_OnFinished;
 		}
 
 		builderCount = builders.Count;
@@ -50,10 +53,15 @@ public class BuilderManager : MonoBehaviour
 		build = true;
 	}
 
-	private void BuilderManager_OnFinished()
+    private void BuilderManager_OnReady()
+    {
+        readyCount++;
+        if (readyCount >= builders.Count)
+            OnAllReady.Invoke();
+    }
+
+    private void BuilderManager_OnFinished()
 	{
-		print("Finished");
-		print(workingBuilder);
 		workingBuilder--;
 		builderCount--;
 

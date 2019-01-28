@@ -5,16 +5,29 @@ using JTUtility;
 
 public class Builder : Climber
 {
-	[SerializeField] bool building;
+    [SerializeField] bool ready;
+    [SerializeField] bool building;
 	[SerializeField] bool floatThrough;
 	[SerializeField] Vector3 buildTargetPosition;
 	[SerializeField] Color buildColor;
 
 	Quaternion origRotation;
 
-	public event Action OnFinished;
+    public event Action OnReady;
+    public event Action OnFinished;
 
-	public bool Ready { get; set; }
+	public bool Ready
+    {
+        get => ready;
+        set
+        {
+            if (ready == false && value == true)
+            {
+                OnReady.Invoke();
+            }
+            ready = value;
+        }
+    }
 	public bool Working { get; set; }
 	public bool Finished { get; set; }
 
@@ -41,7 +54,7 @@ public class Builder : Climber
 		if (Ready)
 		{
 			GetComponentInChildren<SpriteRenderer>().color = buildColor;
-		}
+        }
 
 		if (building)
 		{
